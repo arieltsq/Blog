@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% flash.each do |name, message|%>
+      <div class="flash-message flash-message-<%= name %>">
+        <%= message %>
+          </div>
+      <% end %>
+  
+
+  <!-- flash stores all the notice -->
+
+    <!-- checking if user have logged in, if logged in, shows logout  -->
+
+    <!-- content insertion on yield -->
+    <%= yield %>
+
+  </body>
+</html>
