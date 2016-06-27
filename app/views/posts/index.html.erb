@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>This is your post hor! Don't play play!</h1>
 
-<table>
+<table class="table table-hover table-responsive">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Body</th>
+      <th><strong>Title hor: </strong></th>
+      <th><strong>Content lor</strong></th>
+        <th><strong>Timing zhun zhun:</strong></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,7 +19,7 @@
 
       <td><%= post.title %></td>
       <td><%= post.body %></td>
-      <td><%= post.created_at %></td>
+      <td><%= post.created_at.in_time_zone('Singapore').strftime("%A, %B %d, %Y [%I : %M : %S : %L %p]") %></td>
       <td><%= link_to 'Show', user_post_path(post.user,post) %></td>
 
       <td><%= link_to 'Edit', edit_user_post_path(post.user, post) %></td>

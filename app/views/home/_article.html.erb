@@ -1,0 +1,33 @@
+<% obj.each do |post| %>
+<div class="row post">
+  <!-- <div class="col-xs-8 col-xs-offset-2"> -->
+    <div class="container-fluid" style="background-color:rgba(255, 255, 255, 0.73); font-size: 50px;" >
+      <div class="well well-lg" style="background-color:rgba(255, 255, 255, 0.73);">
+          <div class="article-title" ><strong>Title:</strong>
+              <%= link_to post.title, user_post_path(post.user,post), class:"testing" %>
+          </div>
+          <div class="article-body">
+            <strong>Content: </strong>
+
+           <%= truncate(post.body, length: 50) %>
+
+              <div class="article-meta-details">
+                  <small>Created by:
+                      <%= post.user.email if post.user%>,
+                      <%= time_ago_in_words(post.created_at) %>
+                      ago, last updated:
+                      <%= time_ago_in_words(post.updated_at) %>
+                      ago</small>
+              </div>
+
+          </div>
+          <div class="article-actions">
+            <%= link_to 'Edit', edit_user_post_path(post.user, post) %>
+            <%= link_to 'Destroy', user_post_path(post.user, post), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+  </div>
+<!-- </div> -->
+</div>
+</div>
+
+<% end %>

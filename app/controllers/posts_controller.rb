@@ -20,8 +20,8 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     if session[:user_id] == nil
-     redirect_to home_path, notice: 'You must log in to access this page.'
-   end
+      redirect_to home_path, notice: 'You must log in to access this page.'
+    end
   end
 
   # GET /posts/1/edit
@@ -62,8 +62,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     if @post.user != current_user
-    format.html { render "root", notice: "This post doesn't belong to you!" }
-  end
+      format.html { render "root", notice: "This post doesn't belong to you!" }
+    end
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to user_post_path(@post.user, @post), notice: 'successfully updated' }
