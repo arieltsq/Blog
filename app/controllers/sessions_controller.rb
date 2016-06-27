@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
 
       redirect_to home_path, notice: "Logged In"
+      # redirect_to user_posts_path(session[:user_id]), notice: "Logged In"
+
     else
       flash.now.alert = "Couldn't sign you in. Please check your email and password."
       render "new"
@@ -19,10 +21,10 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
 
     flash[:notice] = 'Signed out'
-    # render "new"
-    redirect_to home_path
 
-  
+    redirect_to home_path, notice: "Signed out"
+
+
   end
 
 end

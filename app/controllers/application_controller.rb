@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
     unless user_logged_in?
       flash[:error] = "You must log in to access this page."
       redirect_to home_path
+      #redirect_to sign_in_path
 
     end
   end
