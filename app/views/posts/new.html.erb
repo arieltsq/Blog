@@ -2,5 +2,6 @@
 
 <%= render 'form', post: @post %>
 
+    <%= link_to 'Back', user_posts_path(current_user) ,  class:"btn btn-default" %>
 <!-- <%= link_to 'Back', user_posts_path %> -->
-<%= link_to 'New Post', new_user_post_path(session[:user_id]) %>
+<!-- <%= link_to 'New Post', new_user_post_path(session[:user_id]) %> -->
