@@ -1,7 +1,8 @@
 <h1>My New Post</h1>
 
 <%= render 'form', post: @post %>
-
-    <%= link_to 'Back', user_posts_path(current_user) ,  class:"btn btn-default" %>
+<br>
+    <%= link_to 'Back', user_posts_path(current_user) ,  class:"btn btn-default pull-right" %>
+    <br>
 <!-- <%= link_to 'Back', user_posts_path %> -->
 <!-- <%= link_to 'New Post', new_user_post_path(session[:user_id]) %> -->
