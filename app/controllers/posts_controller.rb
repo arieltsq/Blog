@@ -30,6 +30,7 @@ class PostsController < ApplicationController
       redirect_to home_path, notice: "This post doesn't belong to you!"
     end
 
+
   end
 
   # POST /posts
